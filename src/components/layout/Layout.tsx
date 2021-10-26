@@ -4,11 +4,10 @@ import SideBar from "./SideBar"
 
 const Layout: React.FC = () => {
   return (
-    <>
-      <Header />
+    <div className="relative ">
       <SideBar />
       <Content />
-    </>
+    </div>
   )
 }
 

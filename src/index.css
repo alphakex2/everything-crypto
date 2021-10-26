@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.icon {
+  @apply relative block h-10 mt-4 ml-5 text-center;
+}
+
+.title {
+  @apply relative block h-10 mt-5 text-center;
+}
+
+.brand-title {
+  @apply relative block h-10 mt-5 ml-4 text-center;
+}
+
+.navigation li:hover {
+  @apply before:shadow-2xl before:rounded-full before:-top-10 before:absolute before:right-0.5 before:w-10 before:h-10 before:bg-transparent;
+}
+
+.navigation li:hover {
+  @apply after:shadow-bxl after:rounded-full after:-bottom-10 after:absolute after:right-0.5 after:w-10 after:h-10 after:bg-transparent;
+}
+
+.hovered {
+  @apply bg-white text-blue-900 before:shadow-2xl before:rounded-full before:-top-10 before:absolute before:right-0.5 before:w-10 before:h-10;
+  @apply after:shadow-bxl after:rounded-full after:-bottom-10 after:absolute after:right-0.5 after:w-10 after:h-10;
+}
+
+
