@@ -8,6 +8,8 @@ const SideBar: React.FC = () => {
 
   const defaultProperties =
     "relative flex ml-1 space-x-5 text-white rounded-tl-3xl rounded-bl-3xl hover:bg-white hover:text-blue-700"
+  const defaultPropertiesNoWhite =
+    "relative flex ml-1 space-x-5 rounded-tl-3xl rounded-bl-3xl hover:bg-white hover:text-blue-700"
   return (
     <div
       className={
@@ -41,7 +43,7 @@ const SideBar: React.FC = () => {
             <li
               className={
                 hover === idx
-                  ? `hovered ${defaultProperties}`
+                  ? `hovered ${defaultPropertiesNoWhite}`
                   : defaultProperties
               }
               key={idx}

@@ -24,7 +24,7 @@
 
 .hovered {
   @apply bg-white text-blue-900 before:shadow-2xl before:rounded-full before:-top-10 before:absolute before:right-0.5 before:w-10 before:h-10;
-  @apply after:shadow-bxl after:rounded-full after:-bottom-10 after:absolute after:right-0.5 after:w-10 after:h-10;
+  @apply  after:shadow-bxl after:rounded-full after:-bottom-10 after:absolute after:right-0.5 after:w-10 after:h-10;
 }
 
 isActive {
