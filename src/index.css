@@ -27,4 +27,6 @@
   @apply after:shadow-bxl after:rounded-full after:-bottom-10 after:absolute after:right-0.5 after:w-10 after:h-10;
 }
 
-
+isActive {
+  @apply w-16
+}

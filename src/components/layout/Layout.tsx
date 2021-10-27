@@ -1,12 +1,13 @@
 import Content from "./Content"
-import Header from "./Header"
 import SideBar from "./SideBar"
 
-const Layout: React.FC = () => {
+const Layout: React.FC = ({ children }) => {
   return (
     <div className="relative ">
       <SideBar />
-      <Content />
+      <Content>
+      
+      </Content>
     </div>
   )
 }

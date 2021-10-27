@@ -1,13 +1,21 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { ToggleMenu } from "../../context/menuToggleContext"
 import { navigationData } from "./../../data/navigation"
 
 const SideBar: React.FC = () => {
   const [hover, setHover] = useState<null | number>(1)
+  const { toggle } = useContext(ToggleMenu)
 
   const defaultProperties =
     "relative flex ml-1 space-x-5 text-white rounded-tl-3xl rounded-bl-3xl hover:bg-white hover:text-blue-700"
   return (
-    <div className="container fixed h-full overflow-hidden transition duration-500 bg-purple-500 border-l-2 w-60">
+    <div
+      className={
+        toggle
+          ? `container fixed h-full overflow-hidden transition-transform duration-500 bg-blue-700 border-l-2 w-16  isActive`
+          : "container fixed h-full overflow-hidden transition-transform duration-500 bg-blue-700 border-l-2 w-60"
+      }
+    >
       {/* Brand Name */}
       <div className="flex text-white">
         <span className="icon">
@@ -26,7 +34,7 @@ const SideBar: React.FC = () => {
         </span>
         <span className="brand-title">Crypto Currencies</span>
       </div>
-      {/* Main Menu */}
+      {/* Side Menu */}
       <ul className="static w-full navigation" style={{ marginTop: "40px" }}>
         {navigationData.map((data, idx) => (
           <button className="w-60">
