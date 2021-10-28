@@ -1,33 +1,37 @@
-import { useState, useContext } from "react"
+import { useContext, useState } from "react"
 import { ToggleMenu } from "../../context/menuToggleContext"
+import { navigationData } from "../../data/navigation"
 import { BrandIcon } from "../../svgs"
-import { navigationData } from "./../../data/navigation"
 
-const SideBar: React.FC = () => {
+const SideBar = () => {
   const [hover, setHover] = useState<null | number>(1)
   const { toggle } = useContext(ToggleMenu)
 
   const defaultProperties =
-    "relative flex ml-1 space-x-5 text-white rounded-tl-3xl rounded-bl-3xl hover:bg-white hover:text-blue-700"
+    "relative flex ml-1 space-x-5  text-white rounded-tl-3xl rounded-bl-3xl hover:bg-white hover:text-blue-700"
   const defaultPropertiesNoWhite =
     "relative flex ml-1 space-x-5 rounded-tl-3xl rounded-bl-3xl hover:bg-white hover:text-blue-700"
+
   return (
     <div
       className={
         toggle
-          ? ` sidemenu sm:16 fixed   h-full overflow-hidden transition-transform duration-500 bg-blue-700 border-l-2 w-16  isActive`
-          : " sidemenu sm:16 fixed sm:w-16  h-full overflow-hidden transition-transform duration-500 bg-blue-700 border-l-2 md:w-60"
+          ? `fixed top-0 left-0 h-full bg-blue-700   w-14  md:w-60 isActive`
+          : "fixed  top-0 left-0 h-full bg-blue-700  w-14  md:w-60"
       }
     >
-      {/* Brand Name */}
-      <div className="flex text-white">
-        <span className="icon">{BrandIcon}</span>
-        <span className="brand-title">Crypto Currencies</span>
+      <div className="brand">
+        <div className="flex text-white">
+          <span className="icon">{BrandIcon}</span>
+          <span className="brand-title">Crypto Currencies</span>
+        </div>
       </div>
-      {/* Side Menu */}
-      <ul className="static w-full navigation" style={{ marginTop: "40px" }}>
+      <ul
+        className="static navigation"
+        style={{ marginTop: "40px", minWidth: "56px" }}
+      >
         {navigationData.map((data, idx) => (
-          <button className="w-60">
+          <button className="w-16 md:w-60">
             <li
               className={
                 hover === idx
