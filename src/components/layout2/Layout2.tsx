@@ -1,3 +1,5 @@
+
+import CustomRouter from "../router/CustomRouter"
 import Main from "./Main"
 import SideBar from "./SideBar"
 
@@ -5,7 +7,6 @@ const Layout2: React.FC = () => {
   return (
     <>
       <SideBar />
-
       <Main />
     </>
   )

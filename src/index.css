@@ -28,43 +28,19 @@
   @apply after:shadow-bxl after:rounded-full after:-bottom-10 after:absolute after:right-0.5 after:w-10 after:h-10;
 }
 
-isActive {
-  @apply w-16;
-}
+
 
 .cardBox:hover .icon,
 .cardBox:hover .number,
 .cardBox:hover .cardName {
   color: white !important;
 }
-/* 
-.details table thead td {
-  @apply font-semibold p-2
+
+
+.brand {
+  color: white !important;
 }
 
-.details table thead td:last-child {
-  text-align: end;
+a {
+  @apply text-blue-700 hover:text-blue-800
 }
-
-.details  table tr {
-  @apply text-black border-b-2
-} 
-.details  table tr:last-child {
-  @apply border-b-0
-}
-
-.details table tr:hover {
-  @apply bg-blue-700 text-white
-}
-
-.details table tr td {
-  @apply p-2
-}
-
-.details table tr td:last-child {
-  text-align: end;
-}
-
-.hamburger {
-  @apply hidden md:block
-} */

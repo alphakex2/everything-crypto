@@ -3,22 +3,27 @@ import { Eye, Money, Comment, Dollar } from "../svgs"
 export const cardData = [
   {
     number: 1504,
-    name: "Daily Views",
+    name: "Total Crypto Currencies",
     icon: Eye,
   },
   {
     number: 20000,
-    name: "Sales",
+    name: "Total Exchanges",
     icon: Money,
   },
   {
     number: 750,
-    name: "Comments",
+    name: "Total Market Cap",
     icon: Comment,
   },
   {
     number: 120000,
-    name: "Earnings",
+    name: "Total Markets",
+    icon: Dollar,
+  },
+  {
+    number: 120000,
+    name: "Total 24h Volume",
     icon: Dollar,
   },
 ]
