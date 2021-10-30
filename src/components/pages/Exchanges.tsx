@@ -1,9 +1,10 @@
 import { useGetCryptoExchangesQuery } from "../../services/CryptoApi"
 import Accordion from "../Accordion"
+import Spinner from "../spinner/Spinner"
 
 const Exchanges: React.FC = () => {
   const { data, isFetching } = useGetCryptoExchangesQuery("")
-  console.log(data)
+  if(isFetching) return <Spinner />
   return (
     <div>
       {data &&

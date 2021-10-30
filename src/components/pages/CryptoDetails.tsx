@@ -11,13 +11,15 @@ import { genericStats, stats } from "../../data/cryptoStats"
 import HTMLReactParser from "html-react-parser"
 import Chart from "./../chart/Chart"
 import millify from "millify"
+import Spinner from "../spinner/Spinner"
 
 const CryptoDetails: React.FC = () => {
   const { coinId }: any = useParams()
   const [timePeriod, setTimePeriod] = useState("7d")
 
-  const { data } = useGetCryptoDetailsQuery(coinId)
-  const { data: historyData } = useGetCryptoHistoryQuery({ coinId, timePeriod })
+  const { data, isFetching } = useGetCryptoDetailsQuery(coinId)
+  const { data: historyData, isFetching: isHistoryFetching } =
+    useGetCryptoHistoryQuery({ coinId, timePeriod })
 
   const cryptoDetails = data?.data?.coin
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"]
@@ -39,6 +41,8 @@ const CryptoDetails: React.FC = () => {
     }
   }, [setTimePeriod, dropValue])
 
+  if (isFetching) return <Spinner />
+  if (isHistoryFetching) return <Spinner />
   return (
     <div className="grid col-span-1 md:grid-cols-1">
       {/* col 1 */}

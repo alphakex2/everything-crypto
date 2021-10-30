@@ -4,6 +4,7 @@ import { useGetCryptosQuery } from "../../services/CryptoApi"
 import { useGetCryptoNewsQuery } from "../../services/CryptoNewsApi"
 import CardBoxNews from "../card/CardBoxNews"
 import DropDown from "../drop-downs/DropDown"
+import Spinner from "../spinner/Spinner"
 
 interface NewsProps {
   simplified?: boolean
@@ -32,7 +33,7 @@ const News: React.FC<NewsProps> = ({ simplified }) => {
     }
   }, [newsCategory, dropValue])
 
-  if (isFetching) return <div>Loading...</div>
+  if (isFetching) return <Spinner />
   return (
     <div>
       {count > 4 && (

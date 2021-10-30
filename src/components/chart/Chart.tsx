@@ -1,7 +1,4 @@
-import { Line } from "react-chartjs-2"
 import ChartJS from "react-apexcharts"
-import List from "../list/List"
-import millify from "millify"
 import { info } from "./../../svgs/index"
 interface ChartProps {
   coinHistory?: any
@@ -21,7 +18,6 @@ const Chart: React.FC<ChartProps> = ({
       new Date(coinHistory.data.history[i].timestamp).toLocaleDateString()
     )
   }
-  console.log(coinTimeStatmp)
 
 
   const options = {

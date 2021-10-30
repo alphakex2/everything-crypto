@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import CardBoxCrypto from "./../card/CardBoxCrypto"
 import SearchInput from "../Search"
 import { Link } from "react-router-dom"
+import Spinner from "../spinner/Spinner"
 
 interface CryptoCurrenciesProps {
   simplified?: boolean
@@ -13,7 +14,7 @@ const CryptoCurrencies: React.FC<CryptoCurrenciesProps> = ({ simplified }) => {
 
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count)
   const [cryptos, setCryptos] = useState(cryptosList?.data?.coins)
-  if (isFetching) return <div>Fetching...</div>
+  if (isFetching) return <Spinner />
   const [term, setTerm] = useState("")
   const onChange = (e: any) => {
     setTerm(e.target.value)
@@ -32,7 +33,7 @@ const CryptoCurrencies: React.FC<CryptoCurrenciesProps> = ({ simplified }) => {
       {count > 10 && (
         <SearchInput searchTerm={term} handleOnChange={onChange} />
       )}
-      <div className="grid grid-cols-1 gap-6 ml-3 mr-12  sm:col-span-1 md:ml-0 md:mr-6 md:grid-cols-5">
+      <div className="grid grid-cols-1 gap-6 ml-3 mr-12 sm:col-span-1 md:ml-0 md:mr-6 md:grid-cols-5">
         {cryptos?.slice(0, count).map((currency: any, idx: number) => (
           <Link key={idx} to={`/cryptodetails/${currency.id}`}>
             <CardBoxCrypto

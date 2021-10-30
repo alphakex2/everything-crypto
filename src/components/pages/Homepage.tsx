@@ -2,6 +2,7 @@ import millify from "millify"
 import { Link } from "react-router-dom"
 import { useGetCryptosQuery } from "../../services/CryptoApi"
 import CardBox from "../card/CardBox"
+import Spinner from "../spinner/Spinner"
 import CryptoCurrencies from "./CryptoCurrencies"
 import News from "./News"
 
@@ -9,7 +10,7 @@ const Homepage: React.FC = () => {
   //@ts-ignore
   const { data, isFetching } = useGetCryptosQuery(10)
   const globalStats = data?.data?.stats
-  if (isFetching) return <div>Loading...</div>
+  if (isFetching) return <Spinner />
   return (
     <div className="">
       {/* Cards */}
@@ -61,7 +62,7 @@ const Homepage: React.FC = () => {
         <h1 className="mt-8 text-3xl font-semibold text-blue-700">
           Latest Crypto News
         </h1>
-        <News simplified={true}  />
+        <News simplified={true} />
         <h3 className="mt-5 text-center">
           <Link
             className="text-white bg-blue-700 rounded hover:text-white hover:bg-blue-500"
