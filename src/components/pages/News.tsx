@@ -32,7 +32,7 @@ const News: React.FC<NewsProps> = ({ simplified }) => {
       setNewsCategory(dropValue)
     }
   }, [newsCategory, dropValue])
-
+console.log(cryptoNews && cryptoNews?.value[0]?.about[0]?.name)
   if (isFetching) return <Spinner />
   return (
     <div>
@@ -46,15 +46,15 @@ const News: React.FC<NewsProps> = ({ simplified }) => {
       )}
 
       <div className="grid grid-cols-1 gap-3 mt-4 ml-5 sm:col-span-1 md:ml-0 md:mr-2 md:grid-cols-4">
-        {cryptoNews?.articles?.slice(0, count).map((news: any, idx: number) => (
+        {cryptoNews?.value?.slice(0, count).map((news: any, idx: number) => (
           <CardBoxNews
             key={idx}
-            imageUrl={news.urlToImage}
-            title={news.title}
+            imageUrl={news?.image?.thumbnail?.contentUrl}
+            title={news.name}
             description={news.description}
             url={news.url}
-            datePublished={news.publishedAt}
-            authour={news.author}
+            datePublished={news.datePublished}
+            authour={news.about[0]?.name}
           />
         ))}
       </div>
