@@ -7,7 +7,6 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion"
-import { up } from "../svgs"
 
 interface AccordionProps {
   header?: string

@@ -1,4 +1,3 @@
-import millify from "millify"
 import moment from "moment"
 
 interface CardBoxNewsProps {

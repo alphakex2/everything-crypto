@@ -1,7 +1,8 @@
-import Layout from "./components/layout/Layout"
+
 import { ToggleMenu } from "./context/menuToggleContext"
 import { useState } from "react"
-import Layout2 from "./components/layout2/Layout2"
+import Layout from './components/layout/Layout';
+
 
 const App: React.FC = () => {
   const [toggle, setToggle] = useState(false)
@@ -13,7 +14,7 @@ const App: React.FC = () => {
         setToggle,
       }}
     >
-      <Layout2 />
+      <Layout />
     </ToggleMenu.Provider>
   )
 }
